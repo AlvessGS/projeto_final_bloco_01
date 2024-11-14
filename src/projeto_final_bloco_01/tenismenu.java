@@ -31,6 +31,8 @@ public class tenismenu {
 			System.out.println("****************************************************");
 			System.out.println("                                                    ");
 			System.out.println("Digite a opção desejada:                            ");
+			System.out.println("                                                    ");
+			System.out.println("****************************************************");
 			
 			opcao = ler.nextInt();
 			
