@@ -74,13 +74,13 @@ public class tenismenu {
 				break;
 				
 			case 2:
-				System.out.println("\nConverse All Star\n");
+				System.out.println("Listar todos os tênis\n\n");
 				tenis.listarTodas();
 				keyPress();
 				break;
 				
 			case 3:
-				System.out.println("\nAdidas\n");
+				System.out.println("Apagar \n");
 				tenis.deletar(numero);
 				keyPress();
 				break;
