@@ -2,10 +2,10 @@ package tenis.model;
 
 public class chuteira extends Tenis {
 	
-	 int tipo;
+	int tipo;
 
-	public chuteira(int tamanho, String cor, int estoque, String marca, float valor, int tipo) {
-		super(tamanho, cor, estoque, marca, valor);
+	public chuteira(int numero, int tamanho, String cor, int estoque, String marca, float valor, int tipo) {
+		super(numero, tamanho, cor, estoque, marca, valor);
 		this.tipo = tipo;
 	}
 

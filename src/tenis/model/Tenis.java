@@ -1,19 +1,31 @@
 package tenis.model;
 
-public abstract class Tenis {
+public abstract class Tenis  {
 	
-	private int tamanho;	
+	private int numero;
+	private int tamanho;
 	private String cor;
 	private int estoque;
 	private String marca;
 	private float valor;
 	
-	public Tenis(int tamanho, String cor, int estoque, String marca, float valor) {	
+	public Tenis(int numero, int tamanho, String cor, int estoque, String marca, float valor) {	
+		this.numero = numero;
 		this.tamanho = tamanho;
 		this.cor = cor;
 		this.estoque = estoque;
 		this.marca = marca;
 		this.valor = valor;
+		
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int conta) {
+		this.numero = conta;
+	
 	}
 
 	public int getTamanho() {

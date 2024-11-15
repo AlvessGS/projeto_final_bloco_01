@@ -1,53 +1,48 @@
 package tenis;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import tenis.controller.TenisController;
 import tenis.model.Tenis;
 import tenis.model.TenisCorrida;
 import tenis.model.chuteira;
+
 
 public class tenismenu {
 	
 	public static void main(String[] args) {
 		
-		
-		//Tenis para corrida
-		TenisCorrida t2 = new TenisCorrida(40,"preto", 2, "Nike", 400.0f, 440.0f);
-		t2.visualizar();
-		
-		System.out.println("*******************************************************");
-		
-		
-		chuteira c1 = new chuteira(40,"verde", 6, "Nike", 400.0f, 2);
-		c1.visualizar();
+		TenisController tenis = new TenisController();
 		
 		Scanner ler = new Scanner(System.in);
+	
 		
-		int opcao;
+		int opcao, numero, tamanho, tipo;
+		String marca;
+		float valor;
 		
 		while(true) {
 			
 			System.out.println("\n**************************************************");
 			System.out.println("                                                    ");
-			System.out.println("                    Escolha a marca                 ");
+			System.out.println("                  Escolha uma Opção                 ");
 			System.out.println("                                                    ");
 			System.out.println("****************************************************");
 			System.out.println("                                                    ");
-			System.out.println("                     1 - Olympikus                  ");
-			System.out.println("                     2 - Converse All Star          ");
-			System.out.println("                     3 - Adidas                     ");
-			System.out.println("                     4 - Nike                       ");
-			System.out.println("                     5 - Asics                      ");
-			System.out.println("                     6 - Fila                       ");
-			System.out.println("                     7 - Mizuno                     ");
-			System.out.println("                     8 - Sair                       ");
+			System.out.println("               1 - Cadastrar tênis                  ");
+			System.out.println("               2 - Listar todos os tênis            ");
+			System.out.println("               3 - Apagar                           ");
+			System.out.println("               4 - Sair                             ");
+			System.out.println("                                                    ");
+			System.out.println("                                                    ");
 			System.out.println("                                                    ");
 			System.out.println("****************************************************");
 			System.out.println("                                                    ");
 			System.out.println("Digite a opção desejada:                            ");
 			System.out.println("                                                    ");
-			System.out.println("****************************************************");
 			
 			try {
 				opcao = ler.nextInt();
@@ -57,7 +52,7 @@ public class tenismenu {
 				opcao = 0;
 			}
 			
-			if (opcao==8) {
+			if (opcao==4) {
 				System.out.println("A melhor loja de tênis do Brazil com Z!");
 				ler.close();
 				System.exit(0);
@@ -65,38 +60,28 @@ public class tenismenu {
 			
 			switch(opcao) {
 			case 1:
-				System.out.println("\nOlympikus\n");
+				
+				System.out.println("Digite o nome do tênis");
+				ler.skip("\\R");
+				marca = ler.nextLine();
+				
+				System.out.println("Digite o Preço do Produto: ");
+				valor = ler.nextFloat();
+				
+				tenis.cadastrar(new Tenis(tenis.gerarNumero(), marca, valor,));
 				
 				keyPress();
 				break;
 				
 			case 2:
-				System.out.println("\\nConverse All Star\n");
-				
+				System.out.println("\nConverse All Star\n");
+				tenis.listarTodas();
 				keyPress();
 				break;
 				
 			case 3:
 				System.out.println("\nAdidas\n");
-				
-				keyPress();
-				break;
-				
-			case 4:
-				System.out.println("\nNike\n");
-				
-				keyPress();
-				break;
-				
-			case 5:
-				System.out.println("\nAsics\n");
-				
-				keyPress();
-				break;
-				
-			case 6:
-				System.out.println("\nMizuno\n");
-				
+				tenis.deletar(numero);
 				keyPress();
 				break;
 				

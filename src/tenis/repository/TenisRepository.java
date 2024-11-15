@@ -13,4 +13,5 @@ public interface TenisRepository {
 	
 	//Métodos de compra
 	public void pagar();
+	
 }

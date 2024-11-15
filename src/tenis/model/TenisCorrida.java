@@ -4,8 +4,8 @@ public class TenisCorrida extends Tenis {
 	
 	private float peso;
 
-	public TenisCorrida(int tamanho, String cor, int estoque, String marca, float valor, float peso) {
-		super(tamanho, cor, estoque, marca, valor);
+	public TenisCorrida(int numero, int tamanho, String cor, int estoque, String marca, float valor, float peso) {
+		super(numero, tamanho, cor, estoque, marca, valor);
 		this.peso = peso;
 		
 	}
